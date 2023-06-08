@@ -1,0 +1,339 @@
+@import url('http://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+body {
+  display: flex;
+  background-color: #f5f6f7;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: absolute; z-index: 1;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+.wrap {
+  margin: auto;
+}
+
+.wrap .logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.wrap .logo h1 {
+  margin: 0;
+  font-size: 50px;
+}
+
+.wrap .contents {
+  padding: 50px;
+  background-color: #ffffff;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#form__wrap {
+  margin: 0 auto;
+  width: 460px;
+  font-size: 14px;
+}
+
+#form__wrap .terms__check__all {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+#form__wrap .terms__check__all label {
+  margin-left: 3px;
+  text-decoration: underline;
+}
+
+.join_form {position: relative; z-index: 2;}
+
+.join_form h1 {
+  font-size: 32px; color: #000000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.int-area {
+  width: 400px; position: relative;
+  margin-top: 20px;
+}
+.int-area #id {position: relative;}
+.int-area button {
+  position: absolute;
+  width: 90px;
+  height: 35px;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto 0;
+  border-radius: 3px;
+  background: #000000;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.int-area:first-child {margin-top: 0;}
+.int-area input {
+  width: 100%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  font-size: 18px; color: #000000;
+  outline: none;
+}
+
+.int-area label {
+  position: absolute; left: 10px; top: 15px;
+  font-size: 18px; color: #000000;
+  transition: top .5s ease;
+  cursor: pointer;
+}
+.int-area label.warning {
+  color: red !important;
+  animation: warning .3s ease;
+  animation-iteration-count: 3;
+}
+@keyframes warning {
+  0% {transform: translateX(-8px);}
+  25% {transform: translateX(-8px);}
+  50% {transform: translateX(-8px);}
+  75% {transform: translateX(-8px);}
+}
+
+.int-area input:focus + label,
+.int-area input:valid + label {
+  top: -2px;
+  font-size: 13px; color: #000000;
+}
+
+.btn-area {margin-top: 30px;}
+.btn-area button {
+  width: 100%; height: 50px;
+  position: relative;
+  bottom : -15px;
+  background: #000000;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.caption {
+  margin-top: 20px;
+  text-align: center;
+}
+.caption a{
+  font-size: 15px; color: #000000;
+  text-decoration: none;
+}
+
+.int-area > textarea {
+  margin-top: 60px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .5);
+  font-size: 13px;
+  color: #fff;
+  resize: none;
+}
+
+.int-area #readcheck {
+  margin-left: start;
+  width: 95px;
+  cursor: pointer;
+}
+
+.read {
+  margin-left: 60px;
+  margin-top: 1px;
+}
+
+.int-area #school {
+  width:13px;
+  height:13px;
+  vertical-align:text-top;
+  padding-top:0px;
+}
+
+.int-area #club {
+  width:13px;
+  height:13px;
+  vertical-align:text-top;
+  padding-top:0px;
+}
+
+.int-radio {
+  width: 400px; position: relative;
+  margin-top: 30px;
+}
+.int-radio input:focus + label,
+.int-radio input:valid + label {
+  top: -2px;
+  font-size: 13px; color: #000000;
+}
+.int-radio:first-child {margin-top: 0;}
+
+.int-radio input {
+  padding: 20px 10px 10px 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  font-size: 18px; color: #000000;
+  outline: none;
+}
+
+.int-radio label {
+  position: relative; top: 15px;
+  font-size: 18px; color: #000000;
+  transition: top .5s ease;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.int-radio div 
+{
+  margin-left: 10px;
+  color: gray;
+  font-size: 20px;
+}
+
+select
+{
+ width: 150px; height: 30px;
+ font-size: 15px;
+ position: relative;
+ left: 250px;
+ bottom: 30px;
+ text-align:center;
+ color : black;
+}
+
+
+/*학번만 따로 뺴놓음..*/
+.int-area1 {
+  width: 400px; position: relative;
+  margin-top: 20px;
+}
+
+.int-area1 input {
+  width: 65%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  font-size: 18px; color: #000000;
+  outline: none;
+}
+.int-area1 > textarea {
+  margin-top: 60px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .5);
+  font-size: 13px;
+  color: #000000;
+  resize: none;
+}
+
+.int-area1 label {
+  position: absolute; left: 10px; top: 15px;
+  font-size: 18px; color: #000000;
+  transition: top .5s ease;
+  cursor: pointer;
+}
+
+.int-area1 input:focus + label,
+.int-area1 input:valid + label {
+  top: -2px;
+  font-size: 13px; color: #000000;
+}
+
+.Club{
+  margin: 35px;
+}
+
+
+.file{
+  padding: 25px;
+  right: 16px;
+  top: -43px;
+  position: relative;
+}
+
+.Studentcard{
+  position: relative;
+  margin: 10px;
+  top: -25px;
+  margin-left: 10px;
+  color: gray;
+  font-size: 20px;
+}
+
+.qusetion{
+  margin-left: 10px;
+  color: gray;
+  font-size: 20px;
+  position: relative;
+  bottom: 44px;
+  right:3px;
+}
+
+.security-question{
+  width: 45%;
+  margin: 20px;
+  position: relative;
+  left: -15px;
+  bottom: 12px;
+ 
+  
+}
+
+.security-question1{
+  width: 45%;
+  margin: 20px;
+  position: relative;
+  left: -13px;
+  bottom: 45px;
+  
+  
+}
+
+.answer{
+  position: relative;
+  bottom:45px;
+  right: -6px;
+}
+
+#answer{
+  position: relative;
+  bottom:46px;
+  right: -6px;
+}
+
+#country{
+  margin: 10px;
+  position: relative;
+  left: -2px;
+}
+
+#city{
+  margin: 10px;
+  position: relative;
+  left: -2px;
+}

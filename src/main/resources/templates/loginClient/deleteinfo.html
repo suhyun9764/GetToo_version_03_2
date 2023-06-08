@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width", initial-scale="1.0">
+  <link rel="icon" href="/img/gettoo.ico">
+  <link rel="stylesheet" href="/login_profile.css">
+  <title>GET-TOO</title>
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <div class="navbar_logo">
+      <a href="login_index.html"><img src="/img/nav_logo.png"/></a>
+    </div>
+    <div class="navbar_menu">
+      <ul class="main_menu">
+        <li><a href="####">안녕하세요, <span style="font-weight: bold;"th:text="${client.name}"></span>님 ∨
+          <ul class="sub_menu">
+            <li><a href="clientInfo" style="font-size: 15px; margin-left: 5px;">프로필</a></li>
+            <li><a href="login_group.html" style="font-size: 15px; margin-left: 5px;">동아리</a></li>
+            <li><form action="/clientlogout" method="post"style="cursor: pointer;">
+              <button type ="submit" style="border: 0;
+                                background-color: transparent; cursor: pointer; font-size: 15px;">로그아웃</button>
+            </form></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    </div>
+  </nav>
+</header>
+
+<section id="s1">
+  <div class="profile_name">
+    <div class="profile_name">
+      <h1> 정말로 탈퇴하시겠습니까?</h1>
+    </div>div>
+
+  <div class="profile_btn">
+    <button class="pro_changepw"><a href="changepw.html">예</a></button>
+    <button class="pro_delete" >아니요</button>
+  </div>
+  </div>
+
+</section>
+
+
+
+</body>
+</html>

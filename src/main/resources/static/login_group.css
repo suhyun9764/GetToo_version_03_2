@@ -1,0 +1,193 @@
+* { margin: 0;}
+
+html, body { 
+    width: 100%;
+    height: 1300px;
+}
+
+body, div, ul, li { 
+    margin: 0; 
+    padding:0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+}
+
+.navbar_logo > a > img {
+    width: 150px;
+    margin-left: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 8px 12px;
+}
+
+li {
+    list-style: none;
+}
+
+.main_menu li {
+    float: left;
+    padding: 0 20px;
+    height: 36px;
+    line-height: 36px;
+    position: relative;
+}
+
+.sub_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+.sub_menu li {
+    width: 100px;
+    border: 1px solid rgb(162, 162, 162);
+    background-color: rgb(255, 255, 255);
+}
+
+.main_menu li:hover .sub_menu {
+    display: block;
+    
+}
+
+/*tab css*/
+.tab {
+    float: left; 
+    width: 1200px; 
+    height: 1000px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 170px;
+    margin-top: 40px;
+}
+
+.tabnav {
+    font-size: 0; 
+    width: 1198.5px ; 
+    border: 1px solid #ddd;
+}
+
+.tabnav li {
+    display: inline-block;  
+    height: 46px; 
+    text-align: center; 
+    border-right: 1px solid #ddd;
+}
+
+.tabnav li a:before {
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    top: 0px; 
+    width: 100%; 
+    height: 3px; 
+}
+
+.tabnav li a.active:before {
+    background: #6b1ea2;
+}
+
+.tabnav li a.active {
+    border-bottom: 1px solid #fff;
+}
+
+.tabnav li a { 
+    position: relative; 
+    display: block; 
+    background: #f8f8f8; 
+    color: #000; 
+    padding: 0 30px; 
+    line-height: 46px; 
+    text-decoration: none; 
+    font-size: 16px;
+}
+
+.tabnav li a:hover,
+.tabnav li a.active {
+    background: #fff; 
+    color: #6b1ea2;
+}
+
+.tabcontent {
+    padding: 20px; 
+    height: 1000px; 
+    border: 1px solid #ddd; 
+    border-top: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fbfbfb;
+    width: 900px;
+    height: 130px;
+    border-radius: 20px;
+    display: inline;
+    margin-left: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    box-shadow: 2px 2px 2px 2px gray;
+
+}
+
+.card > a > img {
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+    margin-left: 20px;
+    border-radius: 70px;
+}
+
+.card > .card_body {
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.card > .card_body > p {
+    margin-top: 13px;
+    float: left;
+}
+
+.card > .card_admin {
+    display: inline-flex;
+    margin-left: 480px;
+}
+
+.card > .card_admin > button {
+    border: 0;
+    background-color: transparent;
+}
+
+.card > .card_admin > p {
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+.card > .card_admin > button > a:hover {
+    text-decoration: underline; 
+}
+
+.card:hover {
+    background-color: #f3f3f3;
+    color: #232323;
+}

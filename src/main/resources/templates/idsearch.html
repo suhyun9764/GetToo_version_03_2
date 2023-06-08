@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>아이디찾기</title>
+	<meta charset="UTF-8">
+
+	<!-- Favicon -->
+	<link rel="icon" href="img/core-img/favicon.ico">
+
+	<script src="js/jquery/jquery-2.2.4.min.js"></script>
+	<link rel="stylesheet" href="membership.css">
+</head>
+
+<body>
+<div class="wrap">
+	<div class="logo"><a href="index.html"><img src="./img/logo_black.png" style="width: 300px;"></a></div>
+	<div class="contents">
+		<form action="/client/findID" method="post">
+			<div class="ss">
+				<label for="wrap"
+				>아이디찾기</label>
+
+				<div class="int-area">
+					<input type="text" name="name" id="name" autocomplete="off" required  maxlength="3">
+					<label for="name"> 이름 </label>
+				</div>
+
+				<div class="int-area">
+					<input type="text"  name="studentNumber" id="classNum" maxlength="8" minlength="8" autocomplete="off" required>
+					<label for="classNum"> 학번 </label>
+				</div>
+
+				<div class="int-area">
+					<input type="email" name="email" id="email" autocomplete="off" required>
+					<label for="email"> 이메일 </label>
+				</div>
+			</div>
+			<div class="btn-area">
+				<button id="btn" type="submit"> 아이디찾기 </button>
+			</div>
+	</div>
+	</form>
+</div>
+</div>>
+
+<script>
+	let email = $('#email');
+
+	$(btn).on('click', function() {
+		if($(id).val() == "") {
+			$(id).next('label').addClass('warning');
+			setTimeout(function() {
+				$('label').removeClass('warning');
+			},1500);
+		}
+		else if($(pw).val() == "") {
+			$(pw).next('label').addClass('warning');
+			setTimeout(function() {
+				$('label').removeClass('warning');
+			},1500);
+		}
+	});
+
+	$(function(){
+		// 회원 가입 처리
+		$('#join-submit').click(function(e){
+			e.preventDefault();
+
+			var email = $('#email').val();
+			if(email == ''){
+				alert('이메일을 입력하세요');
+				$("#email").focus();
+				return false;
+			} else {
+				var emailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				if (!emailRegex.test(email)) {
+					alert('이메일 주소가 유효하지 않습니다. ex)abc@gmail.com');
+					$("#email").focus();
+					return false;
+				}
+			}
+
+
+			$.ajax({
+				url: 'register.php',
+				type: 'POST',
+				data: {
+					email:$('#email').val(),
+				},
+				dataType: "json",
+				success: function (response) {
+					if(response.result == 1){
+						alert('가입 완료');
+						location.replace('../index.php'); // 화면 갱신
+					} else if(response.result == 0){
+						alert('이미 가입된 아이디입니다');
+					} else if(response.result == -2){
+						alert('입력된 값이 없습니다');
+					} else {
+						alert('등록중에 에러가 발생했습니다');
+					}
+				},
+				error: function(jqXHR, textStatus, errorThrown){
+					alert("arjax error : " + textStatus + "\n" + errorThrown);
+				}
+			});
+		});
+	});
+</script>
+</body>
+
+</html>

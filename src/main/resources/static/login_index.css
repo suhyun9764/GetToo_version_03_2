@@ -1,0 +1,150 @@
+* { margin: 0;}
+
+html, body { 
+    width: 1470px;
+    height: 1300px;
+}
+
+body, div, ul, li { 
+    margin: 0; 
+    padding:0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+}
+
+.navbar_logo > a > img {
+    width: 150px;
+    margin-left: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 8px 12px;
+}
+
+li {
+    list-style: none;
+}
+
+.main_menu li {
+    float: left;
+    padding: 0 20px;
+    height: 36px;
+    line-height: 36px;
+    position: relative;
+}
+
+.sub_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+.sub_menu li {
+    width: 100px;
+    border: 1px solid rgb(162, 162, 162);
+    background-color: rgb(255, 255, 255);
+}
+
+.main_menu li:hover .sub_menu {
+    display: block;
+    
+}
+
+.wrapper{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40 auto;
+    
+}
+
+.wrapper ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.wrapper ul li{
+    list-style: none;
+    background: #eee;
+    padding: 12px 20px;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.wrapper ul li.active{
+    background: rgb(130, 17, 200);
+    color: #fff;
+}
+
+.poster{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.poster .card{
+    position: relative;
+    background-color: #fbfbfb;
+    box-shadow: 2px 2px 2px 2px gray;
+    width: 220px;
+    height: 270px;
+    border-radius: 20px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.poster .card_body {
+    margin-top: 5px;
+    color: #313131;
+}
+
+.poster .card:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    z-index: 9;
+}
+
+.poster .card.hide{
+    display: none;
+}
+
+.poster .card img {
+    position: absolute;
+    object-fit: cover;
+    max-width: 200px;
+    min-width: 200px; 
+    max-height: 200px; 
+    min-height: 200px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+}

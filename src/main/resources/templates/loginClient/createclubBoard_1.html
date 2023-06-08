@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>썬더일레븐 공지사항 게시판</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/moim_index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+<!-- Preloader -->
+<div class="preloader d-flex align-items-center justify-content-center">
+    <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<!-- ##### Header Area Start ##### -->
+<header class="header-area">
+    <!-- Navbar Area -->
+    <div class="oneMusic-main-menu">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Menu -->
+                <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                    <!-- Nav brand -->
+                    <a href="/index.html" class="nav-brand"><img src="../../../../../../../문서/카카오톡%20받은%20파일/capstone%20ver%200.5/capstone%20ver%200.4/img/core-img/logo.png" alt=""></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+
+                        <!-- Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+                                <li><a href="/index.html">Home</a></li>
+                                <li><a href="albums-store.html">Albums</a></li>
+                                <li><a href="albums-store.html">Albums</a></li>
+                                <li><a href="albums-store.html">Albums</a></li>
+                                <li><a href="#">mypage</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <form style="cursor: pointer;">
+                                                <a action="####">logout</a>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ##### Header Area End ##### -->
+
+<!-- ##### Breadcumb Area Start ##### -->
+<section class="breadcumb-area bg-img bg-overlay" style="position:relative; background-image: url(/img/bg-img/breadcumb3.jpg);">
+    <div class="moim_profile">
+        <a href="/free_board.html"><img src="/img/core-img/icon_back.png" style="width: 30px;"></a>
+        <h3>썬더일레븐</h3>
+        <div style="float: left;">
+            <img src="/img/bg-img/s1.jpg">
+        </div>
+        <div class="moim_name">
+            <p>강수호</p>
+        </div>
+        <div class="moim_info">
+            <p>12/50명 &nbsp;| &nbsp;개설일 2023/04/03</p>
+        </div>
+    </div>
+</section>
+<!-- ##### Breadcumb Area End ##### -->
+
+<section class="moim_container">
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>자유게시판</strong>
+            <p>마음껏 떠들어라</p>
+        </div>
+        <div class="board_write_wrap">
+            <form action="/board/create" method="post" enctype="multipart">
+                <div class="board_write">
+                    <div class="title">
+                        <dl>
+                            <dt>제목</dt>
+                            <dd><input name="title" type="text" placeholder="제목 입력"></dd>
+                        </dl>
+                    </div>
+                    <div class="cont">
+                        <textarea name="content" placeholder="내용 입력"></textarea>
+                    </div>
+                    <span>
+                            <p>이미지 파일 업로드</p>
+                            <input type="file" multiple="multiple" name="imageFiles">
+                        </span>
+                </div>
+                <div class="btn-area" style="margin-left: 400px;">
+                    <button id="btn" type="submit"> 등록 </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area">
+    <div class="container">
+        <div class="row d-flex flex-wrap align-items-center">
+            <div class="col-12 col-md-6">
+                <a href="#"><img src="/img/core-img/logo.png" alt=""></a>
+                <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Albums</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ##### Footer Area Start ##### -->
+
+<!-- ##### All Javascript Script ##### -->
+<!-- jQuery-2.2.4 js -->
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="/js/bootstrap/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="/js/bootstrap/bootstrap.min.js"></script>
+<!-- All Plugins js -->
+<script src="/js/plugins/plugins.js"></script>
+<!-- Active js -->
+<script src="/js/active.js"></script>
+
+<script>
+</script>
+</body>
+
+</html>

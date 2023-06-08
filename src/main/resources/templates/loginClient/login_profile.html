@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="icon" href="/img/gettoo.ico">
+    <link rel="stylesheet" href="/login_profile.css">
+    <title>GET-TOO</title>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="index.html"><img src="/img/nav_logo.png"/></a>
+        </div>
+        <div class="navbar_menu">
+            <ul class="main_menu">
+                <!--                    <li><a href="####">안녕하세요, <span style="font-weight: bold;"th:text="${name}"></span>님 ∨-->
+                <!--                        <ul class="sub_menu">-->
+                <!--                            <li><a href="loginClient/clientInfo">프로필</a></li>-->
+                <!--                            <li><a href="login_group.html">동아리</a></li>-->
+                <!--                            <li><form style="cursor: pointer;">-->
+                <!--                                <button action="####">로그아웃</button>-->
+                <!--                                </form></li>-->
+                <li><a href="####">안녕하세요, <span style="font-weight: bold;"th:text="${client.name}"></span>님 ∨
+                    <ul class="sub_menu">
+                        <li><a href="clientInfo" style="font-size: 15px; margin-left: 5px;">프로필</a></li>
+                        <li><a href="login_group.html" style="font-size: 15px; margin-left: 5px;">동아리</a></li>
+                        <li><form action="clientlogout" method="post"style="cursor: pointer;">
+                            <button type ="submit" style="border: 0;
+                                background-color: transparent; cursor: pointer; font-size: 15px;">로그아웃</button>
+                        </form></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        </div>
+    </nav>
+</header>
+
+<section id="s1">
+    <div class="profile">
+        <div class="profile_name">
+            <h1> <span th:text="${client.name}"></span></h1>
+        </div>
+
+        <div class="profile_info">
+            <table class="profile_table">
+                <tr>
+                    <th scope="row">학과</th>
+                    <td><span th:text="${client.department}"></span></td>
+                </tr>
+                <tr>
+                    <th scope="row">학번</th>
+                    <td><span th:text="${client.studentNumber}"></span></td>
+                </tr>
+                <tr>
+                    <th scope="row">생년월일</th>
+                    <td><span th:text="${client.age}"></span></td>
+                </tr>
+                <tr>
+                    <th scope="row">이메일</th>
+                    <td><span th:text="${client.email}"></span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="profile_btn">
+            <button type = submit class="pro_changepw"><a href="/loginClient/changePwdPage">비밀번호 변경</a></button>
+            <button class="pro_delete" onclick="work()"><a  href="/loginClient/DeleteInfoPage">회원 탈퇴</a></button>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+</html>
+

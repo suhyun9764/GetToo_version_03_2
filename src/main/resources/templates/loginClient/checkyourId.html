@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>아이디찾기</title>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" href="/img/core-img/favicon.ico">
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="/membership.css">
+</head>
+
+<body>
+<div class="wrap">
+    <div class="logo"><a href="index.html"><img src="/img/logo_black.png" style="width: 300px;"></a></div>
+    <div class="contents">
+        <form action="/join.html" method="POST" id="form__wrap">
+            <div class="dd">
+                <label for="checkAll"
+                >회원 아이디</label
+                >
+                </span> <span th:text="${result}"></span>
+            </div>
+            <button type="button" class="next-button" onclick="location.href='/gotoLogin' ">로그인 하기</button>
+        </form>
+    </div>
+</div>
+</script>
+</body>
+</html>

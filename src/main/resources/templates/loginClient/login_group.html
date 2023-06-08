@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width", initial-scale="1.0">
+<link rel="icon" href="/img/gettoo.ico">
+<link rel="stylesheet" href="/login_group.css">
+<title>GET-TOO</title>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+ 
+ $(function(){
+  $('.tabcontent > div').hide();
+  $('.tabnav a').click(function () {
+    $('.tabcontent > div').hide().filter(this.hash).fadeIn();
+    $('.tabnav a').removeClass('active');
+    $(this).addClass('active');
+    return false;
+  }).filter(':eq(0)').click();
+  });
+        
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar_logo">
+                <a href="login_index.html"><img src="/img/nav_logo.png"/></a>
+            </div>
+            <div class="navbar_menu">
+                <ul class="main_menu">
+                    <li><a href="####">안녕하세요, <span style="font-weight: bold;"th:text="${name}"></span>님 ∨
+                        <ul class="sub_menu">
+                            <li><a href="loginClient/clientInfo" style="font-size: 15px; margin-left: 5px;">프로필</a></li>
+                            <li><a href="loginClient/loginGroup" style="font-size: 15px; margin-left: 5px;">동아리</a></li>
+                            <li><form action="/clientlogout" method="post"style="cursor: pointer;">
+                                <button type ="submit" style="border: 0;
+                                background-color: transparent; cursor: pointer; font-size: 15px;">로그아웃</button>
+                            </form></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <section id="s1">
+        <div class="tab">
+            <ul class="tabnav">
+              <li><a href="#tab01">내 전체 동아리</a></li>
+              <li><a href="#tab02">운영 중인 동아리</a></li>
+              <li><a href="#tab03">승인 대기 동아리</a></li>
+            </ul>
+            <div class="tabcontent">
+                <div id="tab01">
+                    <div class="card">
+                        <a href="####"><img src="/img/프로필사진.jpeg"></a>
+                        <div class="card_body">
+                            <h3> <span style="font-weight: bold;"th:text="${club}"></span></h3>
+                            <p>일반회원</p>
+                        </div>
+                        <div class="card_admin">
+                            <button><a href="####">내 글</a></button>
+                            <button><a href="####">내 댓글</a></button>
+                            <button><a href="####" style="color: grey;">탈퇴</a></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="####"><img src="/img/프로필사진.jpeg"></a>
+                        <div class="card_body">
+                            <h3>테일즈런너</h3>
+                            <p>일반회원</p>
+                        </div>
+                        <div class="card_admin">
+                            <button><a href="####">내 글</a></button>
+                            <button><a href="####">내 댓글</a></button>
+                            <button><a href="####" style="color: grey;">탈퇴</a></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="####"><img src="/img/프로필사진.jpeg"></a>
+                        <div class="card_body">
+                            <h3>테일즈런너</h3>
+                            <p>일반회원</p>
+                        </div>
+                        <div class="card_admin">
+                            <button><a href="####">내 글</a></button>
+                            <button><a href="####">내 댓글</a></button>
+                            <button><a href="####" style="color: grey;">탈퇴</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab02">
+                    <div class="card">
+                        <a href="####"><img src="/img/프로필사진.jpeg"></a>
+                        <div class="card_body">
+                            <h3>마이멜로디</h3>
+                            <p>운영진</p>
+                        </div>
+                        <div class="card_admin">
+                            <button><a href="####">내 글</a></button>
+                            <button><a href="####">내 댓글</a></button>
+                            <button><a href="####" style="color: grey;">삭제</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab03">
+                    <div class="card">
+                        <a href="####"><img src="/img/프로필사진.jpeg"></a>
+                        <div class="card_body">
+                            <h3>김앤김안과</h3>
+                            <p>운영진</p>
+                        </div>
+                        <div class="card_admin">
+                            <p>개설 승인 대기 중</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="####"><img src="/img/프로필사진.jpeg"></a>
+                        <div class="card_body">
+                            <h3>제트스트림</h3>
+                            <p>일반회원</p>
+                        </div>
+                        <div class="card_admin">
+                            <p>가입 승인 대기 중</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </section>
+    
+</body>
+</html>

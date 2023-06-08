@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>동아리 홍보글 작성</title>
+</head>
+
+<style>
+    .layout {
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .layout > input, textarea {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top; 10px;
+
+    }
+
+    .layout > textarea{
+        width: 100%;
+        margin-top: 50px;
+        min-height: 300px;
+    }
+</style>
+<body>
+<div class="container">
+    <form action="/board/create" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="galleryName" id = "galleryName" value="comic" />
+        <input type="hidden" name="galleryId" id = "galleryId" value= 1 />
+
+        작성자 <input type="text" name="id">
+        비밀번호 <input type="text" name="writer">
+        <br>
+        <br>
+        이미지 파일들<input type="file" multiple="multiple" name="imageFiles" >
+        <br>
+        <br>
+        <input type="text" name="title" placeholder="제목을 입력해주세요">
+        <br>
+        <br>
+        <textarea name="content" placeholder="만화갤러리입니다. 만화와 관련된 이야기를 해 주세요."></textarea>
+        <br>
+        <input type="submit"/>
+    </form>
+</div> <!-- /container -->
+
+</body>
+</html>

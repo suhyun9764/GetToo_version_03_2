@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="icon" href="/img/gettoo.ico">
+    <link rel="stylesheet" href="login_index.css">
+    <title>GET-TOO</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div th:if="${errorMessage}">
+            <script th:inline="javascript">
+                alert([[${errorMessage}]]);
+            </script>
+        </div>
+        <div class="navbar_logo">
+            <a href="login_index.html"><img src="/img/nav_logo.png"/></a>
+        </div>
+        <div class="navbar_menu">
+            <ul class="main_menu">
+                <li><a href="####">안녕하세요, <span style="font-weight: bold;"th:text="${name}"></span>님 ∨
+                    <ul class="sub_menu">
+                        <li><a href="loginClient/clientInfo" style="font-size: 15px; margin-left: 5px;">프로필</a></li>
+                        <li><a href="loginClient/loginGroup" style="font-size: 15px; margin-left: 5px;">동아리</a></li>
+                        <li><form action="/clientlogout" method="post"style="cursor: pointer;">
+                            <button type ="submit" style="border: 0;
+                                background-color: transparent; cursor: pointer; font-size: 15px;">로그아웃</button>
+                        </form></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        </div>
+    </nav>
+</header>
+
+
+<div class="wrapper">
+    <ul>
+        <li class="list active" data-filter="all">전체</li>
+        <li class="list" data-filter="sport">체육분과</li>
+        <li class="list" data-filter="culture">문화분과</li>
+        <li class="list" data-filter="volunteer">봉사분과</li>
+        <li class="list" data-filter="education">교양분과</li>
+        <li class="list" data-filter="religion">종교분과</li>
+    </ul>
+    <div class="poster"></div>
+</div>
+<script src="./js/filter.js"></script>
+<script>
+    //영화 정보 셋팅 [DB대신 json파일 임시 생성]
+    let group =   [{'name' : '금강', 'content' : '태권도 동아리', 'item': 'sport'},
+        {'name' : '기어', 'content' : '자전거 동아리', 'item': 'sport'},
+        {'name' : '드라곤', 'content' : '축구 동아리', 'item': 'sport'},
+        {'name' : '탁우회', 'content' : '탁구 동아리', 'item': 'sport'},
+        {'name' : '미스터미스터', 'content' : '농구 동아리', 'item': 'sport'},
+        {'name' : '슈퍼스타', 'content' : '농구 동아리', 'item': 'sport'},
+        {'name' : '야사모', 'content' : '야구 동아리', 'item': 'sport'},
+        {'name' : '어프로치', 'content' : '테니스 동아리', 'item': 'sport'},
+        {'name' : '퍼펙트', 'content' : '볼링 동아리', 'item': 'sport'},
+        {'name' : 'TNT', 'content' : '배드민턴 동아리', 'item': 'sport'},
+
+        {'name' : '래디칼', 'content' : '통기타 동아리', 'item': 'culture'},
+        {'name' : '코스모스', 'content' : '락밴드 동아리', 'item': 'culture'},
+        {'name' : '피노키오', 'content' : '댄스 동아리', 'item': 'culture'},
+        {'name' : '페가서스2', 'content' : '연극 동아리', 'item': 'culture'},
+        {'name' : '3K', 'content' : '힙합 동아리', 'item': 'culture'},
+
+        {'name' : 'Y-SMU', 'content' : '새마을 운동 동아리', 'item': 'volunteer'},
+        {'name' : '굿네이버스', 'content' : '아동권리 봉사 동아리', 'item': 'volunteer'},
+        {'name' : '로타랙트', 'content' : '다양한 봉사활동 동아리', 'item': 'volunteer'},
+        {'name' : '여우리나', 'content' : '벽화 봉사 동아리', 'item': 'volunteer'},
+        {'name' : '한울회', 'content' : '한국청소년연맹 동아리', 'item': 'volunteer'},
+        {'name' : 'KFF', 'content' : '한국자유총연맹 동아리', 'item': 'volunteer'},
+        {'name' : '유니코바', 'content' : '민간 피해자지원단체 동아리', 'item': 'volunteer'},
+
+        {'name' : '다반향초', 'content' : '다도 문화 동아리', 'item': 'education'},
+        {'name' : '무리랑', 'content' : '해병대 전우회', 'item': 'education'},
+        {'name' : '소담', 'content' : '토론 동아리', 'item': 'education'},
+        {'name' : '새울문학회', 'content' : '문학 동아리', 'item': 'education'},
+        {'name' : 'DSLR', 'content' : '사진 동아리', 'item': 'education'},
+        {'name' : '모두의마블', 'content' : '보드게임 동아리', 'item': 'education'},
+        {'name' : 'HACTOR', 'content' : '공부 동아리', 'item': 'education'},
+
+        {'name' : '네비게이토', 'content' : '기독교 동아리', 'item': 'religion'},
+        {'name' : 'CCC', 'content' : '기독교 동아리', 'item': 'religion'},
+        {'name' : 'DFC', 'content' : '기독교 동아리', 'item': 'religion'},
+        {'name' : 'JMD', 'content' : '기독교 동아리', 'item': 'religion'},
+        {'name' : '유심회', 'content' : '불교 동아리', 'item': 'religion'},
+        {'name' : '증산도', 'content' : '태을주수행 동아리', 'item': 'religion'},
+        {'name' : 'MOMMA', 'content' : '기독교 동아리', 'item': 'religion'}]
+
+    //배열 담을 배열
+    let showingArry = [];
+
+    // 배열 섞기 함수
+    const shuffleArray = array => {
+        for (var i = 0; i < array.length; i++) {
+            var j = Math.floor(Math.random() * (i + 1));
+            const temp = array[i];     //빈 곳에  배열i를 저장
+            array[i] = array[j];       //배열 j를 배열 i에 저장
+            array[j] = temp;           //상수 x를 배열 j에 저장
+        }
+        return array;
+    };
+
+    for(let i =0; i<group.length; i++){
+        let posters = `<a href="${group[i].name}.html">
+                <div class="card" data-item="${group[i].item}">
+                    <img src="./img/group/${group[i].name}.jpg" alt="${group[i].name}">
+                    <div class="card_body" style="margin-top: 215px; text-align: center;">
+                        <h5>${group[i].name}</h5>
+                        <p>${group[i].content}</p>
+                    </div></a>`
+        showingArry.push(posters);
+    }
+
+    shuffleArray(showingArry);
+
+
+    $(document).ready(function(){
+        //섞은 배열을 출력하기
+        $('.poster').append(showingArry);
+
+        let list = $(".list");
+        let card = $(".card");
+
+        list.on('click',function(){
+            list.removeClass('active');
+            $(this).addClass('active');
+            let dataFilter = $(this).attr('data-filter');
+            console.log(showingArry);
+
+            card.each(function(){
+                $(this).addClass('hide');
+                $(this).removeClass('active');
+                if($(this).attr('data-item') == dataFilter || dataFilter == 'all'){
+                    $(this).addClass('active');
+                    $(this).removeClass('hide');
+                }
+            })
+        })
+
+    })
+</script>
+</body>
+</html>

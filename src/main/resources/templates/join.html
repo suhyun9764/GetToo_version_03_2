@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>GET-TOO 회원가입</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style_join.css">
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+<!-- Preloader -->
+<div class="wrap">
+    <div class="logo"><a href="index.html"><img src="./img/logo_black.png" style="width: 300px;"></a></div>
+    <div class="wrap">
+    </div>
+
+    <!-- login area -->
+    <section class="join_form">
+        <h1>회원가입</h1>
+        <div class="contents">
+            <form action="/client/join" method="POST" enctype="multipart/form-data">
+                <div class="int-area">
+                    <input type="text" name="id" id="id" autocomplete="off" required  maxlength="20">
+                    <label for="id"> 아이디 </label>
+                    <button id="idbtn">중복 확인</button>
+                </div>
+
+                <div class="int-area">
+                    <input type="text" name="name" id="name" autocomplete="off" required  maxlength="3">
+                    <label for="name"> 이름 </label>
+                </div>
+
+                <div class="int-area">
+                    <input type="password" name="password" id="pw" autocomplete="off" required minlength="7" maxlength="20">
+                    <label for="pw"> 비밀번호 (7자 이상)</label>
+                </div>
+                <div class="int-area">
+                    <input type="password" name="pwCheck" id="pwcheck" autocomplete="off" required  minlength="7" maxlength="20">
+                    <label for="pwcheck"> 비밀번호 확인 (7자 이상)</label>
+                </div>
+                <div class="int-area">
+                    <input type="text" class="datepicker" name="age" readonly="readonly" id="birthday" autocomplete="off" required style="cursor: pointer;">
+                    <label for="birthday"> 생년월일 </label>
+                </div>
+                <div class="int-area">
+                    <input type="email" name="email" id="email" autocomplete="off" required>
+                    <label for="email"> 이메일 </label>
+                </div>
+
+                <div class="int-area1">
+                    <input type="text" name = "studentNumber" id="classNum" maxlength="8" minlength="8" autocomplete="off" required>
+                    <label for="classNum"> 학번 </label>
+                </div>
+
+                <select name = "department">
+                    <option value = "">학과</option>
+                    <option value = "글로벌문화콘텐츠학전공">글로벌문화콘텐츠학전공</option>
+                    <option value = "국어국문창작학전공">국어국문창작학전공</option>
+                    <option value = "역사문화학전공">역사문화학전공</option>
+                    <option value = "경제학전공">경제학전공</option>
+                    <option value = "생명과학전공">생명과학전공</option>
+                    <option value = "PPE(정,치경제,철학)전공">PPE(정,치경제,철학)전공</option>
+                    <option value = "학생설계전공">학생설계전공</option>
+                    <option value = "건축학과">건축학과</option>
+                    <option value = "패션디자인,비지니스학과">패션디자인,비지니스학과</option>
+                    <option value = "뷰티디자인학과">뷰티디자인학과</option>
+                    <option value = "커뮤니케이션디자인학과">커뮤니케이션디자인학과</option>
+                    <option value = "웹툰애니메이션학과">웹툰애니메이션학과</option>
+                    <option value = "공연예술콘텐츠학과">공연예술콘텐츠학과</option>
+                    <option value = "군사학과">군사학과</option>
+                    <option value = "경찰학과">경찰학과</option>
+                    <option value = "법학과">법학과</option>
+                    <option value = "행정학과">행정학과</option>
+                    <option value = "사회복지학과">사회복지학과</option>
+                    <option value = "아동교육상담학과">아동교육상담학과</option>
+                    <option value = "중등특수교육과">중등특수교육과</option>
+                    <option value = "경영학과">경영학과</option>
+                    <option value = "회계학과">회계학과</option>
+                    <option value = "비즈니스영어학과">비즈니스영어학과</option>
+                    <option value = "비즈니스중국어학과">비즈니스중국어학과</option>
+                    <option value = "비즈니스일본어학과">비즈니스일본어학과</option>
+                    <option value = "물류통상학과">물류통상학과</option>
+                    <option value = "산업,광고심리학과">산업,광고심리학과</option>
+                    <option value = "건축공학과">건축공학과</option>
+                    <option value = "토목환경공학과">토목환경공학과</option>
+                    <option value = "컴퓨터공학과">컴퓨터공학과</option>
+                    <option value = "정보통신공학과">정보통신공학과</option>
+                    <option value = "재난안전공학과">재난안전공학과</option>
+                    <option value = "소방방재학과">소방방재학과</option>
+                    <option value = "에너지신소재공학과">에너지신소재공학과</option>
+                    <option value = "간호학과">간호학과</option>
+                    <option value = "물리치료학과">물리치료학과</option>
+                    <option value = "임상병리학과">임상병리학과</option>
+                    <option value = "응급구조학과">응급구조학과</option>
+                    <option value = "식품영양학과">식품영양학과</option>
+                    <option value = "생활체육학과">생활체육학과</option>
+                    <option value = "건강운동관리학과">건강운동관리학과</option>
+                    <option value = "보건의료경영학과">보건의료경영학과</option>
+                    <option value = "화장품학과">화장품학과</option>
+                    <option value = "컴퓨터정보통신공학과">컴퓨터정보통신공학과</option>
+                    <option value = "정보보안학과">정보보안학과</option>
+                    <option value = "빅데이터분석전공">빅데이터분석전공</option>
+                    <option value = "스마트모빌리티전공">스마트모빌리티전공</option>
+                    <option value = "디지털금융(핀테크)전공">디지털금융(핀테크)전공</option>
+                    <option value = "디지털헬스케어학과">디지털헬스케어학과</option>
+                    <option value = "빅테이터인공지능학과">빅테이터인공지능학과</option>
+                    <option value = "핀테크학과">핀테크학과</option>
+                    <option value = "한의예과">한의예과</option>
+                </select>
+                <div class="int-radio">
+                    <div class="school"> 재학여부 </div>
+                    <label for="school1"><input type="radio" name="school" id="school1" value="ing"> 재학생 </label>
+                    <label for="school2"><input type="radio" name="school" id="school2" value="rest"> 휴학생 </label>
+                    <label for="school3"><input type="radio" name="school" id="school3" value="end"> 졸업생 </label>
+                </div>
+
+
+                <div class="int-radio">
+                    <div class="Club">동아리</div>
+                    <div class="country">
+                        <select id="club" name="club" onchange="toggleOptions()">
+                            <option value="미소속">미소속</option>
+                            <option value="농구동아리">농구동아리</option>
+                            <option value="축구동아리">축구동아리</option>
+                            <!-- 다른 동아리 옵션들 추가 -->
+                        </select>
+                    </div>
+                    <div class="city" id="leader-option" style="display: none;">
+                        <select id="leader" name="leader">
+                            <option value="" disabled selected>동아리 내 직위</option>
+                            <option value="YES">회장</option>
+                            <option value="No">부원</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <script>
+                    function toggleOptions() {
+                        var clubSelect = document.getElementById("club");
+                        var leaderOption = document.getElementById("leader-option");
+                        var memberOption = document.getElementById("member-option");
+
+                        if (clubSelect.value === "미소속") {
+                            leaderOption.style.display = "none";
+                            memberOption.style.display = "none";
+                        } else {
+                            leaderOption.style.display = "block";
+                            memberOption.style.display = "block";
+                        }
+                    }
+                </script>
+                <div class = "Studentcard">학생증(포털가능)</div>
+                <div class = "file">
+                    <input type="file" name ="imageFile" id="file_uploads" accept="image/*" required>
+                </div>
+                <div class="preview">
+                    <div class = "qusetion">본인 확인 질문:</div>
+                    <!--<div class="security-question">본인 확인 질문:</div>-->
+                    <select class="securitya-question1" name="question">
+                        <option value="q1">출생지는 어디인가요?</option>
+                        <option value="q2">초등학교 이름은 무엇인가요?</option>
+                        <option value="q3">가장 좋아하는 음식은 무엇인가요?</option>
+                    </select>
+                    <br>
+                    <label class ="answer">답변:</label>
+                    <input type="text" id="answer" name="answer" required>
+                    <br>
+                </div>
+                <div th:if="${errorMessage}">
+                    <script th:inline="javascript">
+                        alert([[${errorMessage}]]);
+                    </script>
+                </div>
+                <div class="btn-area">
+                    <button id="btn" type="submit"> 회원가입 </button>
+                </div>
+            </form>
+</div>
+
+
+<script>
+
+    $.datepicker.setDefaults({
+        dateFormat: 'yy-mm-dd',
+        prevText: '이전 달',
+        nextText: '다음 달',
+        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+        showMonthAfterYear: true,
+        yearSuffix: '년'
+    });
+    $(function(){
+        $('.datepicker').datepicker();
+    });
+    let id = $('#id');
+    let pw = $('#pw');
+    let pwCheck = $('#pwCheck');
+    let birthday = $('#birthday');
+    let email = $('#email');
+    let cellphoneNo = $('#cellphoneNo');
+    let school = $('#school');
+    let readcheck = $('#readcheck');
+    let btn = $('#btn');
+    $(function() {
+        $('#idbtn').click(function() {
+            var id = $('#id').val();
+            $.ajax({
+                url: '/client/check-id',
+                type: 'POST',
+                data: { id: id },
+                success: function(result) {
+                    if (result === 'available') {
+                        alert('사용가능한 아이디입니다');
+                    } else if (result === 'not-available') {
+                        alert('이미 사용 중인 아이디입니다.');
+                    } else {
+                        alert('알 수 없는 오류가 발생했습니다.');
+                    }
+                }
+            });
+        });
+    });
+    $(btn).on('click', function() {
+        if($(id).val() == "") {
+            $(id).next('label').addClass('warning');
+            setTimeout(function() {
+                $('label').removeClass('warning');
+            },1500);
+        }
+        else if($(pw).val() == "") {
+            $(pfw).next('label').addClass('warning');
+            setTimeout(function() {
+                $('label').removeClass('warning');
+            },1500);
+        }
+    });
+
+
+    $(function(){
+        // 회원 가입 처리
+        $('#join-submit').click(function(e){
+            e.preventDefault();
+            if($("#id").val() ==''){
+                alert('아이디를 입력하세요');
+                $("#id").focus();
+                return false;
+            }
+
+            if($("#pw").val() ==''){
+                alert('비밀번호를 입력하세요');
+                $("#pw").focus();
+                return false;
+            }
+
+            if($("#pwCheck").val() ==''){
+                alert('비밀번호를 다시 한번 더 입력하세요');
+                $("#pwCheck").focus();
+                return false;
+            }
+            if ($('#pw').val() !== $('#pwCheck').val()) {
+                alert('비밀번호가 일치하지 않습니다');
+                $('#pwCheck').focus();
+                return false;
+            }
+
+            var email = $('#email').val();
+            if(email == ''){
+                alert('이메일을 입력하세요');
+                $("#email").focus();
+                return false;
+            } else {
+                var emailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (!emailRegex.test(email)) {
+                    alert('이메일 주소가 유효하지 않습니다. ex)abc@gmail.com');
+                    $("#email").focus();
+                    return false;
+                }
+            }
+
+            $.ajax({
+                url: 'register.php',
+                type: 'POST',
+                data: {
+                    name:$("#name").val(),
+                    userID:$('#id').val(),
+                    email:$('#email').val(),
+                    password:$('#pw').val(),
+                    mobileNO:$("#cellphoneNo").val()
+                },
+                dataType: "json",
+                success: function (response) {
+                    if(response.result == 1){
+                        alert('가입 완료');
+                        location.replace('../index.php'); // 화면 갱신
+                    } else if(response.result == 0){
+                        alert('이미 가입된 아이디입니다');
+                    } else if(response.result == -2){
+                        alert('입력된 값이 없습니다');
+                    } else {
+                        alert('등록중에 에러가 발생했습니다');
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert("arjax error : " + textStatus + "\n" + errorThrown);
+                }
+            });
+        });
+    });
+
+
+    const input = document.querySelector('input');
+    const preview = document.querySelector('.preview');
+
+    input.addEventListener('change', showTextFile);
+
+
+    function showTextFile() {
+        const selectedFiles = input.files;
+        const list = document.createElement('ul');
+        preview.appendChild(list);
+
+        for(const file of selectedFiles) {
+            const listItem = document.createElement('li');
+
+            if(validFileType(file)) {
+                const summary = document.createElement('div');
+                summary.textContent = `파일명 : ${file.name}, 파일 크기 : ${returnFileSize(file.size)}.`;
+                const textContents = document.createElement('div');
+
+                let reader = new FileReader();
+                reader.onload = function () {
+                    textContents.innerText = reader.result;
+                };
+                reader.readAsText(file, "UTF-8");
+
+                listItem.appendChild(summary);
+                listItem.appendChild(textContents);
+            } else {
+                const message = document.createElement('div');
+                message.textContent = `파일명 ${file.name}: .txt 파일을 선택하세요`;
+                listItem.appendChild(message);
+            }0
+
+            list.appendChild(listItem);
+        }
+    }
+
+    const fileTypes = [
+        'text/plain',
+    ];
+
+    function validFileType(file) {
+        return fileTypes.includes(file.type);
+    }
+
+    function returnFileSize(number) {
+        if(number < 1024) {
+            return number + 'bytes';
+        } else if(number > 1024 && number < 1048576) {
+            return (number/1024).toFixed(1) + 'KB';
+        } else if(number > 1048576) {
+            return (number/1048576).toFixed(1) + 'MB';
+        }
+    }
+
+    var countries = ["소속","미소속"];
+    var cities = {
+        "농구": ["회장", "부원"],
+        "축구": ["회장", "부원"],
+        "야구": ["회장", "부원"],
+        "배구": ["회장", "부원"],
+        "철구": ["회장", "부원"],
+
+
+    };
+
+    var countrySelect = document.getElementById("country");
+    for (var i = 0; i < countries.length; i++) {
+        var option = document.createElement("option");
+        option.value = countries[i];
+        option.text = countries[i];
+        countrySelect.appendChild(option);
+    }
+
+    countrySelect.addEventListener("change", function() {
+        var selectedCountry = countrySelect.value;
+        var citySelect = document.getElementById("city");
+        citySelect.innerHTML = "";
+
+        if (selectedCountry === "미소속") {
+            citySelect.setAttribute("disabled", "disabled");
+            citySelect.style.display = "none";
+        } else {
+            citySelect.removeAttribute("disabled");
+            citySelect.style.display = "block";
+            for (var i = 0; i < cities[selectedCountry].length; i++) {
+                var option = document.createElement("option");
+                option.value = cities[selectedCountry][i];
+                option.text = cities[selectedCountry][i];
+                citySelect.appendChild(option);
+            }
+        }
+    });
+</script>
+
+
+</body>
+</html>

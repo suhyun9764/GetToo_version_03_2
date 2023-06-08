@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GetToo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/GetToo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GetToo__final-master.GetToo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/GetToo__final-master.GetToo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GetToo_test_3-master.GetToo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/GetToo_test_3-master.GetToo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.example.GetToo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.example.GetToo.main.iml" />
+    </modules>
+  </component>
+</project>

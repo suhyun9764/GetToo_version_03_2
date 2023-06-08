@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>비밀번호 변경</title>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="/membership.css">
+</head>
+
+<body>
+<div class="wrap">
+    <div class="logo"><a href="index.html"><img src="/img/logo_black.png" style="width: 300px;"></a></div>
+    <div class="contents">
+        <form action="/loginClient/loginPwdChange" method="post" onsubmit="return validateForm()">
+            <div class="dd">
+                <label for="checkAll"
+                >현재 비밀번호</label>
+
+                <div class="int-area">
+                    <input type="password" id="newPassword" name="password" autocomplete="off" required>
+                    <label for="newPassword">비밀번호 확인:</label>
+                </div>
+                <div th:if="${errorMessage}">
+                    <script th:inline="javascript">
+                        alert([[${errorMessage}]]);
+                    </script>
+                </div>
+                <div class="btn-area">
+                    <button id="btn" type="submit"> 현재 비밀번호 확인 </button>
+                </div>
+        </form>
+    </div>
+</div>
+<script th:inline="javascript">
+    function validateForm() {
+        var newPassword = document.getElementById("newPassword").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (newPassword !== confirmPassword) {
+            alert("비밀번호가 일치하지 않습니다.");
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>GET-TOO 로그인</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="membership.css">
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="logo"><a href="index.html"><img src="./img/logo_black.png" style="width: 300px;"></a></div>
+        <div class="contents">
+            <form action="/clientlogin" method="post">
+            <div class="ss">
+                <label for="wrap">로그인</label>
+            <div class="int-area">
+                <input type="text" name="id" id="id" autocomplete="off" required>
+                <label for="id"> 아이디 </label>
+            </div>
+            <div class="int-area">
+                <input type="password" name="password" id="pw" autocomplete="off" required>
+                <label for="pw"> 비밀번호 </label>
+            </div>
+                <div class="btn-area">
+                    <div th:if="${errorMessage}">
+                        <script th:inline="javascript">
+                            alert([[${errorMessage}]]);
+                        </script>
+                    </div>
+            <div class="btn-area">
+                <button id="btn" type="submit"> LOGIN </button>
+            </div>
+        </form>
+        <div class="caption">
+            <a th:href="@{/gotoIdSearch}"> 아이디 찾기 </a>
+            <a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a>
+            <a th:href="@{/gotoPwdSearch}"> 비밀번호 찾기 </a>
+            <a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a>
+
+            <a th:href="@{/gotoMembership}"> 회원가입 </a>
+        </div>     
+    </div>
+</div>
+
+
+<script>
+        let id = $('#id');
+        let pw = $('#pw');
+        let btn = $('#btn');
+
+        $(btn).on('click', function() {
+            if($(id).val() == "") {
+                $(id).next('label').addClass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                },1500);
+            }
+            else if($(pw).val() == "") {
+                $(pw).next('label').addClass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                },1500);
+            }
+        });
+
+        $(btn).on('click', function() {
+            if($(id).val() == "") {
+                $(id).next('label').addClass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                },1500)
+            }
+            else if($(pw).val() == "") {
+                $(pw).next('label').addClass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                },1500)
+            }
+        });
+
+</script>
+
+</body>
+
+</html>

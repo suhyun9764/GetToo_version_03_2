@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <!-- Title -->
+  <title>마이페이지</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/img/core-img/favicon.ico">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="moim_index.html">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<h1>나의 정보</h1>
+<body>
+<form action="/loginClient/clientInfo" method="get">
+  <!--        action 바꿔야함 -->
+  <button class="w-100 btn btn-dark btn-lg" type="submit">
+    내 정보 보기
+  </button>
+</form>
+
+<form action="/loginClient/changePwdPage" method="get">
+  <button class="w-100 btn btn-dark btn-lg" type="submit">
+    비밀번호 변경
+  </button>
+</form>
+
+
+</div>
+</body>
+
+"/loginClient/changePwdPage"
